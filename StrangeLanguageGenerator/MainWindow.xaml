@@ -38,6 +38,7 @@
                 </TransformGroup>
             </ScrollBar.RenderTransform>
         </ScrollBar>
+        <Label Grid.Column="5" Content="&lt;-- &#xD;&#xA;Doesn`t work now!" HorizontalAlignment="Left" Margin="131,388,0,0" VerticalAlignment="Top" Width="108" Grid.ColumnSpan="3"/>
 
 
     </Grid>
