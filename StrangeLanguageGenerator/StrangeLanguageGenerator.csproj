@@ -2,16 +2,26 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net7.0-windows10.0.22621.0</TargetFramework>
+    <TargetFramework>net7.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
-    <SupportedOSPlatformVersion>7.0</SupportedOSPlatformVersion>
     <ApplicationIcon>SLG.ico</ApplicationIcon>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <Authors>yoz75</Authors>
+    <AssemblyVersion>1.0</AssemblyVersion>
+    <FileVersion>1.0</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="SLG.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="SLG.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="SLG.png" />
   </ItemGroup>
 
 </Project>

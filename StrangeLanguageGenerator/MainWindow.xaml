@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:StrangeLanguageGenerator"
         mc:Ignorable="d"
-        Title="MainWindow" Height="509" Width="669" Background="#FF648AE6" BorderBrush="Black" MinWidth="645" MinHeight="411" MaxHeight="512" MaxWidth="669">
-    <Grid Background="#FF648AE6" Height="477" VerticalAlignment="Center" HorizontalAlignment="Center" Width="755">
+        Title="Strange langueage generator" Height="509" Width="669" Background="#FF648AE6" BorderBrush="Black" MinWidth="645" MinHeight="411" MaxHeight="512" MaxWidth="669" Icon="/SLG.png" ResizeMode="NoResize" Loaded="Window_Loaded">
+    <Grid Background="#FF648AE6" Height="505" VerticalAlignment="Center" HorizontalAlignment="Center" Width="669">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="47*"/>
             <ColumnDefinition Width="174*"/>
@@ -18,16 +18,16 @@
             <ColumnDefinition Width="65*"/>
             <ColumnDefinition Width="22*"/>
         </Grid.ColumnDefinitions>
-        <TextBlock x:Name="EnterText" HorizontalAlignment="Left" Margin="53,0,0,415" TextWrapping="Wrap" Text="The longer the text, the more realistic the words will be" VerticalAlignment="Bottom" Height="47" Width="264" FontFamily="Cascadia Mono" Foreground="#FFFFE795" Grid.ColumnSpan="3" FontSize="14"/>
-        <TextBlock x:Name="ResultText" HorizontalAlignment="Left" Margin="49,0,0,415" TextWrapping="Wrap" Text="Result" VerticalAlignment="Bottom" Height="47" Width="249" FontSize="20" FontFamily="Cascadia Mono" Foreground="#FFFFE795" Grid.Column="3" Grid.ColumnSpan="4"/>
+        <TextBlock x:Name="EnterText" HorizontalAlignment="Left" Margin="3,0,0,443" TextWrapping="Wrap" Text="The longer the text, the more realistic the words will be" VerticalAlignment="Bottom" Height="46" Width="264" FontFamily="Cascadia Mono" Foreground="#FFFFE795" Grid.ColumnSpan="3" FontSize="14" Grid.Column="1"/>
+        <TextBlock x:Name="ResultText" HorizontalAlignment="Left" Margin="49,0,0,443" TextWrapping="Wrap" Text="Result" VerticalAlignment="Bottom" Height="47" Width="249" FontSize="20" FontFamily="Cascadia Mono" Foreground="#FFFFE795" Grid.Column="3" Grid.ColumnSpan="5"/>
         <TextBox x:Name="UserText" Margin="49,62,0,0" TextWrapping="Wrap" Text="Your text" VerticalAlignment="Top" Background="#FF2F8AE6" BorderBrush="{x:Null}" Foreground="#FFFADFA6" Grid.ColumnSpan="3" Height="325" HorizontalAlignment="Left" Width="272"/>
         <TextBox x:Name="ResultUserText" Margin="49,62,77,0" TextWrapping="Wrap" VerticalAlignment="Top" Background="#FF2F8AE6" BorderBrush="{x:Null}" Foreground="#FFFADFA6" Height="325" Grid.Column="3" Grid.ColumnSpan="5" Width="272"/>
         <Button x:Name="GenerateButton" Content="Generate" Grid.ColumnSpan="3" Margin="49,382,0,10" Background="#FFF7EA92" IsDefault="True" Click="GenerateButton_Click" FontSize="22" HorizontalAlignment="Left" Width="272"/>
         <Button x:Name="OpenFile" Grid.Column="3" Content="Open file" HorizontalAlignment="Left" Margin="49,387,0,0" VerticalAlignment="Top" Background="#FFF7EA92" Click="OpenFileButton_Click" Width="86" Grid.ColumnSpan="3"/>
         <Button x:Name="SaveFile" Grid.Column="3" Content="Save file" HorizontalAlignment="Left" Margin="49,410,0,0" VerticalAlignment="Top" Background="#FFF7EA92" Click="SaveFileButton_Click" Width="86" Grid.ColumnSpan="3"/>
-        <TextBlock Grid.Column="5" HorizontalAlignment="Left" Margin="55,387,0,0" TextWrapping="Wrap" Text="World length" VerticalAlignment="Top" Background="#FFF0F0F0" Height="17" Width="74"/>
-        <TextBox x:Name="LengthText" Margin="54,403,34,0" VerticalAlignment="Top" Background="#FFF0F0F0" BorderBrush="{x:Null}" Foreground="Black" Height="18" Grid.Column="5" Text="2" TextWrapping="WrapWithOverflow"/>
-        <ScrollBar x:Name="Scb" Grid.Column="5" HorizontalAlignment="Left" Margin="38,387,0,0" VerticalAlignment="Top" ValueChanged="Scb_ValueChanged" RenderTransformOrigin="0.5,0.5" SmallChange="1" Maximum="100" Minimum="2">
+        <TextBlock Grid.Column="5" HorizontalAlignment="Left" Margin="65,387,0,0" TextWrapping="Wrap" Text="World length" VerticalAlignment="Top" Background="#FFF0F0F0" Height="17" Width="74"/>
+        <TextBox x:Name="LengthText" Margin="64,403,6,0" VerticalAlignment="Top" Background="#FFF0F0F0" BorderBrush="{x:Null}" Foreground="Black" Height="18" Grid.Column="5" Text="2" TextWrapping="WrapWithOverflow"/>
+        <ScrollBar x:Name="Scb" Grid.Column="5" HorizontalAlignment="Left" Margin="48,387,0,0" VerticalAlignment="Top" ValueChanged="Scb_ValueChanged" RenderTransformOrigin="0.5,0.5" SmallChange="1" Maximum="100" Minimum="2">
             <ScrollBar.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -38,7 +38,17 @@
                 </TransformGroup>
             </ScrollBar.RenderTransform>
         </ScrollBar>
-        <Label Grid.Column="5" Content="&lt;-- &#xD;&#xA;Doesn`t work now!" HorizontalAlignment="Left" Margin="131,388,0,0" VerticalAlignment="Top" Width="108" Grid.ColumnSpan="3"/>
+        <Label Grid.Column="5" Content="&lt;-- &#xD;&#xA;Doesn`t work now!" HorizontalAlignment="Left" Margin="139,387,0,0" VerticalAlignment="Top" Width="108" Grid.ColumnSpan="3"/>
+        <Label x:Name="VersionLabel" Grid.Column="6" Content="version:" HorizontalAlignment="Left" Margin="46,446,0,0" RenderTransformOrigin="0.5,0.5" Width="83" FontSize="10" Grid.ColumnSpan="3" Foreground="#FF616161" Height="21" VerticalAlignment="Top">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.458"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
 
 
     </Grid>

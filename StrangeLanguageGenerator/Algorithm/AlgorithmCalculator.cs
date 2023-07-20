@@ -1,11 +1,9 @@
 ﻿
 
 using System;
-using System.Threading.Tasks;
+using System.Windows;
 
-namespace StrangeLanguageGenerator
-{
-    public class AlgorithmCalculator
+public class AlgorithmCalculator : IAlgorithmCalculator
         //Привет
     {
         /// <summary>
@@ -33,18 +31,16 @@ namespace StrangeLanguageGenerator
                         {
 
                             if (inputData[^i] == result[^i] && inputData[^(i + 1)] == result[^(i + 1)])
-                            {
-                                result += inputData[i + 1];
-                                result += inputData[i + 2];
+                        {
+                            result = AddChars(inputData, result, i,wordlength);
 
-                            }
                         }
+                    }
                         else
                         {
                             if (inputData[i] == result[i] && inputData[i + 1] == result[i + 1])
                             {
-                                result += inputData[i + 1];
-                                result += inputData[i + 2];
+                            result = AddChars(inputData, result, i,wordlength);
 
                             }
                         }
@@ -59,6 +55,22 @@ namespace StrangeLanguageGenerator
             }
 
             return result;
+
+        string AddChars(string inputData, string result, int i,short charsCount)
+        {
+            for (int j = 1; j <= charsCount; j++)
+            {
+                try
+                {
+                    result += inputData[i + j];
+                }
+                catch(IndexOutOfRangeException)
+                {
+                    result += inputData[^(i + j)];
+                }
+            }
+            return result;
         }
     }
-}
+    }
+

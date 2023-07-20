@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Windows;
 using System.IO;
-
-
 namespace StrangeLanguageGenerator
 {
     /// <summary>
@@ -11,6 +9,7 @@ namespace StrangeLanguageGenerator
     public partial class MainWindow : Window
     {
         private short iteration = 0;
+        private IAlgorithmCalculator selectedAlgorithm;
         public MainWindow()
         {
             InitializeComponent();
@@ -20,14 +19,14 @@ namespace StrangeLanguageGenerator
         private  void GenerateButton_Click(object sender, RoutedEventArgs e)
         {
 
-            AlgorithmCalculator algCul = new AlgorithmCalculator();
+
             if (iteration % 2 == 0)
             {
-                 ResultUserText.Text += algCul.Calculate(UserText.Text, isReversedIndex: false, wordlength: Convert.ToInt16(LengthText.Text));
+                 ResultUserText.Text += selectedAlgorithm.Calculate(UserText.Text, isReversedIndex: false, wordlength: Convert.ToInt16(LengthText.Text));
             }
             else
             {
-                ResultUserText.Text += algCul.Calculate(UserText.Text, isReversedIndex: true, wordlength: Convert.ToInt16(LengthText.Text));
+                ResultUserText.Text += selectedAlgorithm.Calculate(UserText.Text, isReversedIndex: true, wordlength: Convert.ToInt16(LengthText.Text));
             }
         
             iteration++;
@@ -80,6 +79,12 @@ namespace StrangeLanguageGenerator
         {
             LengthText.Text = Scb.Value.ToString();
             Scb.Maximum = UserText.Text.Length - 1 ;
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            VersionLabel.Content = "Version " + StrangeLanguageGenerator.Version.VERSION;
+            selectedAlgorithm = new AlgorithmCalculator();
         }
     }
 }
