@@ -32,7 +32,7 @@ public class AlgorithmCalculator : IAlgorithmCalculator
 
                             if (inputData[^i] == result[^i] && inputData[^(i + 1)] == result[^(i + 1)])
                             {   
-                            result = AddChars(inputData, result, i,wordlength);
+                            result = AddChars(inputData, result, i,wordlength); 
                             }
                         }
                         else

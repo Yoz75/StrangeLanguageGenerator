@@ -24,7 +24,7 @@ namespace StrangeLanguageGenerator
             }
             else
             {
-               CalculateAlgorithm(UserText.Text);
+               CalculateAlgorithm(UserText.Text); 
             }
 
             iteration++;
