@@ -8,21 +8,22 @@
         Title="Strange langueage generator" Height="509" Width="669" Background="#FF648AE6" BorderBrush="Black" MinWidth="645" MinHeight="411" MaxHeight="512" MaxWidth="669" Icon="/SLG.png" ResizeMode="NoResize" Loaded="Window_Loaded">
     <Grid Background="#FF648AE6" Height="505" VerticalAlignment="Center" HorizontalAlignment="Center" Width="669">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="47*"/>
-            <ColumnDefinition Width="174*"/>
-            <ColumnDefinition Width="57*"/>
-            <ColumnDefinition Width="49*"/>
-            <ColumnDefinition Width="37*"/>
-            <ColumnDefinition Width="138*"/>
-            <ColumnDefinition Width="45*"/>
-            <ColumnDefinition Width="65*"/>
-            <ColumnDefinition Width="22*"/>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="184*"/>
+            <ColumnDefinition Width="60*"/>
+            <ColumnDefinition Width="52*"/>
+            <ColumnDefinition Width="39*"/>
+            <ColumnDefinition Width="146*"/>
+            <ColumnDefinition Width="44*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="69*"/>
+            <ColumnDefinition Width="23*"/>
         </Grid.ColumnDefinitions>
         <TextBlock x:Name="EnterText" HorizontalAlignment="Left" Margin="3,0,0,443" TextWrapping="Wrap" Text="The longer the text, the more realistic the words will be" VerticalAlignment="Bottom" Height="46" Width="264" FontFamily="Cascadia Mono" Foreground="#FFFFE795" Grid.ColumnSpan="3" FontSize="14" Grid.Column="1"/>
-        <TextBlock x:Name="ResultText" HorizontalAlignment="Left" Margin="49,0,0,443" TextWrapping="Wrap" Text="Result" VerticalAlignment="Bottom" Height="47" Width="249" FontSize="20" FontFamily="Cascadia Mono" Foreground="#FFFFE795" Grid.Column="3" Grid.ColumnSpan="5"/>
-        <TextBox x:Name="UserText" Margin="49,62,0,0" TextWrapping="Wrap" Text="Your text" VerticalAlignment="Top" Background="#FF2F8AE6" BorderBrush="{x:Null}" Foreground="#FFFADFA6" Grid.ColumnSpan="3" Height="325" HorizontalAlignment="Left" Width="272"/>
-        <TextBox x:Name="ResultUserText" Margin="49,62,77,0" TextWrapping="Wrap" VerticalAlignment="Top" Background="#FF2F8AE6" BorderBrush="{x:Null}" Foreground="#FFFADFA6" Height="325" Grid.Column="3" Grid.ColumnSpan="5" Width="272"/>
-        <Button x:Name="GenerateButton" Content="Generate" Grid.ColumnSpan="3" Margin="49,382,0,10" Background="#FFF7EA92" IsDefault="True" Click="GenerateButton_Click" FontSize="22" HorizontalAlignment="Left" Width="272"/>
+        <TextBlock x:Name="ResultText" HorizontalAlignment="Left" Margin="49,0,0,443" TextWrapping="Wrap" Text="Result" VerticalAlignment="Bottom" Height="47" Width="249" FontSize="20" FontFamily="Cascadia Mono" Foreground="#FFFFE795" Grid.Column="3" Grid.ColumnSpan="6"/>
+        <TextBox x:Name="UserText" Margin="49,62,0,0" TextWrapping="Wrap" Text="Your text" VerticalAlignment="Top" Background="#FF2F8AE6" BorderBrush="{x:Null}" Foreground="#FFFADFA6" Grid.ColumnSpan="4" Height="325" HorizontalAlignment="Left" Width="272"/>
+        <TextBox x:Name="ResultUserText" Margin="49,62,32,0" TextWrapping="Wrap" VerticalAlignment="Top" Background="#FF2F8AE6" BorderBrush="{x:Null}" Foreground="#FFFADFA6" Height="325" Grid.Column="3" Grid.ColumnSpan="6" Width="272"/>
+        <Button x:Name="GenerateButton" Content="Generate" Grid.ColumnSpan="4" Margin="49,382,0,10" Background="#FFF7EA92" IsDefault="True" Click="GenerateButton_Click" FontSize="22" HorizontalAlignment="Left" Width="272"/>
         <Button x:Name="OpenFile" Grid.Column="3" Content="Open file" HorizontalAlignment="Left" Margin="49,387,0,0" VerticalAlignment="Top" Background="#FFF7EA92" Click="OpenFileButton_Click" Width="86" Grid.ColumnSpan="3"/>
         <Button x:Name="SaveFile" Grid.Column="3" Content="Save file" HorizontalAlignment="Left" Margin="49,410,0,0" VerticalAlignment="Top" Background="#FFF7EA92" Click="SaveFileButton_Click" Width="86" Grid.ColumnSpan="3"/>
         <TextBlock Grid.Column="5" HorizontalAlignment="Left" Margin="65,387,0,0" TextWrapping="Wrap" Text="World length" VerticalAlignment="Top" Background="#FFF0F0F0" Height="17" Width="74"/>
@@ -38,8 +39,7 @@
                 </TransformGroup>
             </ScrollBar.RenderTransform>
         </ScrollBar>
-        <Label Grid.Column="5" Content="&lt;-- &#xD;&#xA;Doesn`t work now!" HorizontalAlignment="Left" Margin="139,387,0,0" VerticalAlignment="Top" Width="108" Grid.ColumnSpan="3"/>
-        <Label x:Name="VersionLabel" Grid.Column="6" Content="version:" HorizontalAlignment="Left" Margin="46,446,0,0" RenderTransformOrigin="0.5,0.5" Width="83" FontSize="10" Grid.ColumnSpan="3" Foreground="#FF616161" Height="21" VerticalAlignment="Top">
+        <Label x:Name="VersionLabel" Grid.Column="5" Content="version:" HorizontalAlignment="Left" Margin="79,8,0,0" RenderTransformOrigin="0.5,0.5" Width="204" FontSize="14" Foreground="#FF616161" Height="32" VerticalAlignment="Top" Grid.ColumnSpan="5">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -49,6 +49,7 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
+        <CheckBox x:Name="ResultIsUserTextCheckbox" Grid.Column="4" Content="Use &quot;result&quot; text as &quot;your text&quot;" HorizontalAlignment="Left" Margin="1,430,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="178" IsChecked="False" IsEnabled="False" Height="16"/>
 
 
     </Grid>

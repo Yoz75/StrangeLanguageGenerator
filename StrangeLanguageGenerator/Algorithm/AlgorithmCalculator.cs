@@ -31,17 +31,15 @@ public class AlgorithmCalculator : IAlgorithmCalculator
                         {
 
                             if (inputData[^i] == result[^i] && inputData[^(i + 1)] == result[^(i + 1)])
-                        {
+                            {   
                             result = AddChars(inputData, result, i,wordlength);
-
+                            }
                         }
-                    }
                         else
                         {
                             if (inputData[i] == result[i] && inputData[i + 1] == result[i + 1])
                             {
                             result = AddChars(inputData, result, i,wordlength);
-
                             }
                         }
 
@@ -62,7 +60,7 @@ public class AlgorithmCalculator : IAlgorithmCalculator
             {
                 try
                 {
-                    result += inputData[i + j];
+                    result += inputData[(i + j)];
                 }
                 catch(IndexOutOfRangeException)
                 {

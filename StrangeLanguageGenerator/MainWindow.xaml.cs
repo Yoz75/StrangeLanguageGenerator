@@ -18,18 +18,33 @@ namespace StrangeLanguageGenerator
 
         private  void GenerateButton_Click(object sender, RoutedEventArgs e)
         {
-
-
-            if (iteration % 2 == 0)
+            if(ResultIsUserTextCheckbox.IsChecked.Value)
             {
-                 ResultUserText.Text += selectedAlgorithm.Calculate(UserText.Text, isReversedIndex: false, wordlength: Convert.ToInt16(LengthText.Text));
+                CalculateAlgorithm(ResultUserText.Text);
             }
             else
             {
-                ResultUserText.Text += selectedAlgorithm.Calculate(UserText.Text, isReversedIndex: true, wordlength: Convert.ToInt16(LengthText.Text));
+               CalculateAlgorithm(UserText.Text);
             }
-        
+
             iteration++;
+
+            if (ResultUserText.Text.Length != 0 && !ResultIsUserTextCheckbox.IsEnabled)
+            {
+                ResultIsUserTextCheckbox.IsEnabled = true;
+            }
+
+            void CalculateAlgorithm(string text)
+            {
+                if (iteration % 2 == 0)
+                {
+                    ResultUserText.Text += selectedAlgorithm.Calculate(text, isReversedIndex: false, wordlength: Convert.ToInt16(LengthText.Text));
+                }
+                else
+                {
+                    ResultUserText.Text += selectedAlgorithm.Calculate(text, isReversedIndex: true, wordlength: Convert.ToInt16(LengthText.Text));
+                }
+            }
         }
 
         private void OpenFileButton_Click(object sender, RoutedEventArgs e)
